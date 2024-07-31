@@ -1,0 +1,37 @@
+version: '3'
+
+networks:
+  backend:
+    name: backend
+    driver: bridge
+    
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity
+    volumes:
+      - ..:/workspace:cached
+    networks:
+      - backend
+    
+  postgres:
+    image: postgres:10.4
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medusa_dev
+    networks:
+      - backend
+  # ngrok:
+  #   image: ngrok/ngrok:latest
+  #   networks:
+  #     - backend
+  #   depends_on:
+  #     - nestjs
+  #   environment:
+  #     - NGROK_AUTHTOKEN=2EQjVzP5oQeATpSwLbxERhZngll_3usvsuoLTr3ZrkJL46NRh
+  #   command: http --domain=winning-devoted-falcon.ngrok-free.app nestjs:8888

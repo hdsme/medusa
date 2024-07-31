@@ -1,0 +1,15 @@
+{
+  "name": "eCommerce",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "portsAttributes": {
+    "9000": {
+      "label": "nestjs",
+      "onAutoForward": "silent",
+      "protocol": "http"
+    }
+  },
+  "forwardPorts": [9000],
+  "remoteUser": "root",
+}

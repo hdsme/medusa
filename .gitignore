@@ -24,3 +24,7 @@ build/**
 **/stats
 .favorites.json
 .vscode
+packages/medusa-telemetry/v8-compile-cache-0/
+.pnpm-store
+.devcontainer/sonar-scanner
+.devcontainer/sonar-scanner/*
