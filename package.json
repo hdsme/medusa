@@ -18,6 +18,7 @@
     ]
   },
   "devDependencies": {
+    "@medusajs/workflows-sdk": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^6.19.0",
     "@typescript-eslint/parser": "^6.19.0",
     "axios": "^0.21.4",
@@ -48,7 +49,7 @@
     "turbo": "^1.6.3"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn run lint",
+    "*.{js,jsx,ts,tsx}": "pnpm lint",
     "*.{md,yaml,yml}": "prettier --write"
   },
   "scripts": {
@@ -65,24 +66,24 @@
     "test:integration:api": "turbo run test:integration:chunk --concurrency=50% --no-daemon --no-cache --force --filter=integration-tests-api",
     "test:integration:http": "turbo run test:integration:chunk --concurrency=50% --no-daemon --no-cache --force --filter=integration-tests-http",
     "test:integration:modules": "turbo run test:integration:chunk --concurrency=50% --no-daemon --no-cache --force --filter=integration-tests-modules",
-    "openapi:generate": "yarn ./packages/cli/oas/oas-github-ci run ci --with-full-file",
-    "medusa-oas": "yarn ./packages/cli/oas/medusa-oas-cli run medusa-oas",
+    "openapi:generate": "pnpm ./packages/cli/oas/oas-github-ci run ci --with-full-file",
+    "medusa-oas": "pnpm ./packages/cli/oas/medusa-oas-cli run medusa-oas",
     "release:snapshot": "changeset publish --no-git-tags --snapshot --tag snapshot",
-    "release:next": "chgstangeset publish --no-git-tags --snapshot --tag next",
+    "release:next": "changeset publish --no-git-tags --snapshot --tag next",
     "version:next": "changeset version --snapshot next",
     "release": "changeset publish",
-    "version": "changeset version && yarn install --no-immutable"
+    "version": "changeset version && pnpm install --no-immutable"
   },
   "dependencies": {
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.0",
     "global": "^4.4.0",
-    "import-from": "^3.0.0"
-  },
-  "packageManager": "yarn@3.2.1",
-  "resolutions": {
-    "@redocly/cli/react": "^17.0.1",
-    "@redocly/cli/react-dom": "^17.0.1",
+    "import-from": "^3.0.0",
     "pg": "8.10.0"
-  }
+  },
+  "resolutions": {
+    "pg": "8.10.0",
+    "@medusajs/modules-sdk": "^1.12.11"
+  },
+  "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
 }

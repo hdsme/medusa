@@ -7,4 +7,4 @@ export type BaseUploadFile =
   | {
       files: ({ name: string; content: string } | File)[]
     }
-  | FileList
+  | any

@@ -31,9 +31,9 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "@medusajs/admin-shared": "workspace:*",
     "@babel/parser": "7.23.5",
     "@babel/traverse": "7.23.5",
-    "@medusajs/admin-shared": "0.0.1",
     "chokidar": "3.5.3",
     "fdir": "6.1.1",
     "magic-string": "0.30.5"

@@ -55,6 +55,15 @@ const PRODUCT_CATEGORY_INJECTION_ZONES = [
   "product_category.list.after",
 ] as const
 
+const PRODUCT_TAG_INJECTION_ZONES = [
+  "product_tag.details.before",
+  "product_tag.details.after",
+  "product_tag.details.side.before",
+  "product_tag.details.side.after",
+  "product_tag.list.before",
+  "product_tag.list.after",
+] as const
+
 const PRODUCT_TYPE_INJECTION_ZONES = [
   "product_type.details.before",
   "product_type.details.after",
@@ -189,6 +198,7 @@ export const INJECTION_ZONES = [
   ...PRODUCT_INJECTION_ZONES,
   ...PRODUCT_COLLECTION_INJECTION_ZONES,
   ...PRODUCT_CATEGORY_INJECTION_ZONES,
+  ...PRODUCT_TAG_INJECTION_ZONES,
   ...PRICE_LIST_INJECTION_ZONES,
   ...PROMOTION_INJECTION_ZONES,
   ...GIFT_CARD_INJECTION_ZONES,

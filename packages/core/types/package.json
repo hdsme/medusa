@@ -35,5 +35,8 @@
     "build": "rimraf dist && tsc --build",
     "watch": "tsc --build --watch",
     "test": "exit 0"
+  },
+  "dependencies": {
+    "typeorm": "^0.3.20"
   }
 }
